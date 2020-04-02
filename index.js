@@ -12,6 +12,7 @@ const client = new line.Client(config);
 const app = express();
 // app.use(bodyParser.json());
 // webhook callback
+app.get('/', (req, res) => res.send('Hello LiNE CHAT BOT'));
 app.post('/webhook', line.middleware(config), (req, res) => {
   // req.body.events should be an array of events
   if (!Array.isArray(req.body.events)) {
